@@ -1,4 +1,4 @@
-74ackage fr.inti.entities;
+package fr.inti.entities;
 
 public class User {
 
