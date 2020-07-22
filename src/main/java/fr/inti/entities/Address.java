@@ -1,6 +1,6 @@
 package fr.inti.entities;
 
-public class Adress {
+public class Address {
 	
 	//Attributes
 	private String country;
@@ -13,12 +13,12 @@ public class Adress {
 	
 	//Constructors
 		
-	public Adress() {
+	public Address() {
 		super();
 	}
 
 	
-	public Adress(String country, int postalCode, String city, String street, int number, String furtherInformation) {
+	public Address(String country, int postalCode, String city, String street, int number, String furtherInformation) {
 		super();
 		this.country = country;
 		this.postalCode = postalCode;
