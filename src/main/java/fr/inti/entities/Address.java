@@ -1,6 +1,10 @@
 package fr.inti.entities;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Address {
+	
 	
 	//Attributes
 	private String country;
