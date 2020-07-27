@@ -1,6 +1,7 @@
 package fr.inti.entities;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="clients")
-public class Client extends User {
+public class Client extends User implements Serializable{
 	
 	//attributes 
 	//all in User entity

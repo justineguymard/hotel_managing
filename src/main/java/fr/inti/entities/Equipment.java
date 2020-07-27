@@ -1,5 +1,6 @@
 package fr.inti.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -14,7 +15,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="equipments")
-public class Equipment {
+public class Equipment implements Serializable {
 	
 	//attributes
 	@Id

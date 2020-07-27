@@ -1,5 +1,6 @@
 package fr.inti.entities;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "rooms")
-public class Room {
+public class Room implements Serializable {
 
 	// Attributes
 	@Id

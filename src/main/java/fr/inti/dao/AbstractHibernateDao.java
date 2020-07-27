@@ -68,9 +68,7 @@ public abstract class AbstractHibernateDao <T extends Serializable> {
 		T entity = findOne(id);
 		delete(entity);
 	}
-	
-	
-	
+
 	
 //  //Method to get the current session instead of calling sessionFactory.getCurrentSession() for each method
 //	protected Session getCurrentSession() {

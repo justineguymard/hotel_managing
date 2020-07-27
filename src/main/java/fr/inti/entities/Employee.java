@@ -1,5 +1,7 @@
 package fr.inti.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="employees")
-public class Employee extends User{
+public class Employee extends User implements Serializable {
 	
 	
 	//attributes 

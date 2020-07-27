@@ -1,5 +1,6 @@
 package fr.inti.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -15,7 +16,7 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="bookings")
-public class Booking{
+public class Booking implements Serializable {
 	
 	
 	//attributes

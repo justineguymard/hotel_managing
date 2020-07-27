@@ -1,5 +1,7 @@
 package fr.inti.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "photos")
-public class Photo {
+public class Photo implements Serializable {
 
 	// attributes
 	@Id
@@ -20,8 +22,6 @@ public class Photo {
 	private String url;
 	
 	//TODO : voir pour enrregistrer les photos dans une base de données et stocker les liens dans l'attribut de l'objet
-	
-	
 	// Associations
 	// One Hotel get * (0 or more) photos.
 

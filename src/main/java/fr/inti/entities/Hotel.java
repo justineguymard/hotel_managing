@@ -1,6 +1,7 @@
 package fr.inti.entities;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -18,7 +19,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="hotels")
-public class Hotel {
+public class Hotel implements Serializable {
 	
 	//attributes 
 	@Id
