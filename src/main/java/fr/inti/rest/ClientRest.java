@@ -24,22 +24,22 @@ public class ClientRest {
 		@Autowired
 		private IClientService clientService;
 
-		@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+		@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 		public List<Client> getAllClients(){
 			return clientService.getAllClients();
 		}
 		
-		@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+		@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 		public Client addClient (@RequestBody Client client) {
 			return clientService.addClient(client);
 		}
 		
-		@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+		@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 		public Client updateClient (@RequestBody Client client) {
 			return clientService.updateClient(client);
 		}
 		
-		@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+		@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 		public Client getClient(@RequestParam("pId") int id) {
 			return clientService.getClientById(id);
 		}

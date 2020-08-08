@@ -25,22 +25,22 @@ public class EquipmentRest {
 	@Autowired
 	private IEquipmentService equipmentService;
 
-	@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Equipment> getAllEquipments(){
 		return equipmentService.getAllEquipments();
 	}
 	
-	@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Equipment addEquipment (@RequestBody Equipment equipment) {
 		return equipmentService.addEquipment(equipment);
 	}
 	
-	@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Equipment updateEquipment (@RequestBody Equipment equipment) {
 		return equipmentService.updateEquipment(equipment);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Equipment getEquipment(@RequestParam("pId") int id) {
 		return equipmentService.getEquipmentById(id);
 	}

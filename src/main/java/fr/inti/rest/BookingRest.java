@@ -24,22 +24,22 @@ public class BookingRest {
 	@Autowired
 	private IBookingService bookingService;
 
-	@GetMapping(value="/all", produces= MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces= MediaType.APPLICATION_JSON_VALUE)
 	public List<Booking> getAllBookings(){
 		return bookingService.getAllBookings();
 	}
 	
-	@PostMapping(value="/all", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Booking addBooking(@RequestBody Booking booking) {
 		return bookingService.addBooking(booking);
 	}
 	
-	@PutMapping(value="/update", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Booking updateBooking(@RequestBody Booking booking) {
 		return bookingService.updateBooking(booking);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Booking getBooking(@RequestParam("pId") int id) {
 		return bookingService.getBookingById(id);
 	}

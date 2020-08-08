@@ -25,22 +25,22 @@ public class EmployeeRest {
 	@Autowired
 	private IEmployeeService employeeService;
 
-	@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Employee> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
 	
-	@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Employee addEmployee (@RequestBody Employee employee) {
 		return employeeService.addEmployee(employee);
 	}
 	
-	@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Employee updateEmployee (@RequestBody Employee employee) {
 		return employeeService.updateEmployee(employee);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Employee getEmployee(@RequestParam("pId") int id) {
 		return employeeService.getEmployeeById(id);
 	}

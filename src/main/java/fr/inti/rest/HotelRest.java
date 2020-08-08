@@ -24,22 +24,22 @@ public class HotelRest {
 	@Autowired
 	private IHotelService hotelService;
 
-	@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Hotel> getAllHotels(){
 		return hotelService.getAllHotels();
 	}
 	
-	@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Hotel addHotel (@RequestBody Hotel hotel) {
 		return hotelService.addHotel(hotel);
 	}
 	
-	@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Hotel updateHotel (@RequestBody Hotel hotel) {
 		return hotelService.updateHotel(hotel);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Hotel getHotel(@RequestParam("pId") int id) {
 		return hotelService.getHotelById(id);
 	}

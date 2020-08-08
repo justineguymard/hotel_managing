@@ -25,22 +25,22 @@ public class DirectorRest {
 	@Autowired
 	private IDirectorService directorService;
 
-	@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Director> getAllDirectors(){
 		return directorService.getAllDirectors();
 	}
 	
-	@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Director addDirector (@RequestBody Director director) {
 		return directorService.addDirector(director);
 	}
 	
-	@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Director updateDirector (@RequestBody Director director) {
 		return directorService.updateDirector(director);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Director getDirector(@RequestParam("pId") int id) {
 		return directorService.getDirectorById(id);
 	}

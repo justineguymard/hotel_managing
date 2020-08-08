@@ -23,7 +23,7 @@ public class Booking implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	private int reference;
+	private String reference;
 	@Temporal(TemporalType.DATE)
 	private Date dateArrival;
 	@Temporal(TemporalType.DATE)
@@ -69,10 +69,10 @@ public class Booking implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getReference() {
+	public String getReference() {
 		return reference;
 	}
-	public void setReference(int reference) {
+	public void setReference(String reference) {
 		this.reference = reference;
 	}
 	

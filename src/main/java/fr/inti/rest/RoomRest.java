@@ -25,22 +25,22 @@ public class RoomRest {
 	@Autowired
 	private IRoomService roomService;
 
-	@GetMapping(value="/liste", produces = MediaType.ALL_VALUE)
+	@GetMapping(value="/all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Room> getAllRooms(){
 		return roomService.getAllRooms();
 	}
 	
-	@PostMapping(value="/add", produces= MediaType.ALL_VALUE, consumes=MediaType.ALL_VALUE)
+	@PostMapping(value="/add", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public Room addRoom (@RequestBody Room room) {
 		return roomService.addRoom(room);
 	}
 	
-	@PutMapping(value="/update", produces=MediaType.ALL_VALUE, consumes = MediaType.ALL_VALUE)
+	@PutMapping(value="/update", produces=MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Room updateRoom (@RequestBody Room room) {
 		return roomService.updateRoom(room);
 	}
 	
-	@GetMapping(value="/find", produces=MediaType.ALL_VALUE)
+	@GetMapping(value="/find", produces=MediaType.APPLICATION_JSON_VALUE)
 	public Room getRoom(@RequestParam("pId") int id) {
 		return roomService.getRoomById(id);
 	}
